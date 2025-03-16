@@ -1,0 +1,31 @@
+class SoapQueries {
+  static String celsiusToFahrenheit({required String celsius}) {
+    return '''
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+               xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Body>
+    <CelsiusToFahrenheit xmlns="https://www.w3schools.com/xml/">
+      <Celsius>$celsius</Celsius>
+    </CelsiusToFahrenheit>
+  </soap:Body>
+</soap:Envelope>
+''';
+  }
+
+  static String fahrenheitToCelsius(String fahrenheit) {
+    return '''
+    <?xml version="1.0" encoding="utf-8"?>
+    <soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                   xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+      <soap:Body>
+        <FahrenheitToCelsius xmlns="https://www.w3schools.com/xml/">
+          <Fahrenheit>$fahrenheit</Fahrenheit>
+        </FahrenheitToCelsius>
+      </soap:Body>
+    </soap:Envelope>
+    ''';
+  }
+}
