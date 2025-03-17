@@ -41,10 +41,8 @@ class _HomePageState extends State<HomePage> {
                   onPressed: () async {
                     String temp = tempController.text;
                     if (temp.isNotEmpty) {
-                      String? convertedTemp = await soapService
-                          .convertCelsiusToFahrenheit(celsius: temp);
-                      print('ENTERTHIS: ${convertedTemp}');
-
+                      String? convertedTemp =
+                          await soapService.convertCelsiusToFahrenheit(temp);
                       setState(() => result = convertedTemp);
                     }
                   },
